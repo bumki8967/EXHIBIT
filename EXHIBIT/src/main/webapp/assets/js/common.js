@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  // 햄버거버튼
+  // header mb-ham-menu
   $('.menu_btn').click(function(){
       if ($('.menu').hasClass('on')) {
           $('.menu').removeClass('on');
@@ -13,4 +13,23 @@ $(document).ready(function(){
       $(this).toggleClass('on').siblings().removeClass('on');
       $(this).next(".mo_sub_menu").siblings(".mo_sub_menu").slideUp(300); // 1개씩 펼치기
   });
+
+    // main slide
+    // Initialize Swiper
+    var swiper = new Swiper(".main-slide", {
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
 });
